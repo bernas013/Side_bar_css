@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(320deg, rgba(230,100,101,1), rgba(145,152,229,1));
+}
+
+button{
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.sidebar{
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    background: #8464bb;
+    transition: all 0.4s;
+}
+
+body.open .sidebar{
+    width: 150px;
+    background: linear-gradient(to right, #8464bb, transparent);
+}
+
+.sidebar-header{
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0 3px 0 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1), transparent);
+    border-left: 3px solid transparent;
+    transition: all 0.4s;
+}
+
+.sidebar-header:hover{
+    border-left: 3px solid #bdbdbd;
+}
+
+.sidebar-burger{
+    width: 60px;
+    height: 60px;
+    transition: all 0.4s;
+}
+
+.sidebar-burger > i, body.open .sidebar-burger > i{
+    font-size: 25px;
+    color: #f9f9f9;
+    transition: all 0.4s;
+}
+
+.sidebar-burger:hover > i, body.open .sidebar-burger:hover > i{
+    color: #bdbdbd;
+}
+
+body.open .sidebar-burger{
+    width: 150px;
+    height: 60px;
+    align-items: center;
+    transition: all 0.4s;
+}
+
+.sidebar-menu{
+    display: grid;
+}
+
+.sidebar-menu > button{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    height: 55px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1;
+    padding: 0 15px;
+    border-left: 3px solid transparent;
+    transition: all 0.4s;
+}
+
+.sidebar-menu > button:hover{
+    border-left: 3px solid #f9f9f9;
+}
+
+.sidebar-menu > button.goes-down{
+    position: absolute;
+    width: 150px;
+    border-top: 4px solid linear-gradient(to right, rgba(255, 255, 255, 0.12), transparent);
+    bottom: 0;
+}
+
+.sidebar-menu > button > i{
+    font-size: 25px;
+    color: #f9f9f9;
+    transition: all 0.4s;
+}
+
+.sidebar-menu > button:hover > i, .sidebar-menu > button:hover > span{
+    color: #bdbdbd;
+}
+
+.sidebar-menu > button > span{
+    color: #f9f9f9;
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+body.open .sidebar-menu > button > span{
+    opacity: 1;
+    transition: all 0.4s;
+}
